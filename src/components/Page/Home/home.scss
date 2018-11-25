@@ -1,0 +1,165 @@
+@import '../../../utils/_responsive';
+@import '../../../utils/_units';
+@import '../../../utils/theme';
+
+
+.home {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    
+    @include desktop {
+        flex-direction: row;
+        height: calc(100vh - #{$unit-large} * 2);
+    }
+    .section {
+        padding: $unit-large;
+    }
+    
+    .panel-profile {
+        background-color: #EDF1F7;
+        color:black;
+        height: 100%;
+        @include desktop {
+            width: 40%;
+        }
+
+        .profile-pic {
+            border-radius : 50%;
+            height: 140px;
+            width: 140px;
+            margin: $unit-default;
+        }
+        .title {
+
+        }
+
+        .contact {
+
+        }
+        
+        .blurb {
+
+        }
+
+        .social {
+
+        }
+    } 
+
+    .panel-experience {
+        background-color: #1F2023;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        @include desktop {
+            width: 60%;
+            min-height: 100%;
+            overflow-y: auto;
+        }
+        .title {
+            color: $theme-2;
+            text-transform: uppercase;
+        }
+        .experience-row {
+            padding: $unit-default;
+            .oppurtunity {
+                padding: $unit-default 0;
+                .company-wrapper {
+                    padding: $unit-small 0;
+                    display: flex;
+                    flex-direction :row;
+                    .company {
+                    }
+                    .role {
+                        margin: 0 $unit-small;
+                    }
+                }
+                .description-wrapper {
+                    padding: $unit-small 0;
+                    display: flex;
+                    flex-direction :row;
+                    .timeline {
+                    }
+                    .description {
+                        margin: 0 $unit-small;
+                    }
+                }
+            }
+        }
+        .skill-row {
+            display: flex;
+            flex-direction: row;
+            height: auto;
+            padding: $unit-default;
+            @include mobile {
+                flex-wrap: wrap;
+            }
+            .skills {
+                padding: $unit-default;
+                padding-left: 0;
+                width: 40%;
+                @include mobile {
+                    padding: $unit-default 0;
+                    width: 100%;
+                }
+                
+                .skills-percentage {
+                    list-style-type: none;
+                    padding: 0;
+                    .skill {
+                        width: 100%;
+                        position: relative;
+                        padding: $unit-small 0;
+                        &::before {
+                            display: block;
+                            content: "";
+                            height: 10px;
+                            width: 30%;
+                            background-color: $theme-2;
+                            position: absolute;
+                            bottom: $unit-small - 5px;
+                            z-index: 2;
+                        }
+                        &::after { 
+                            display: block;  
+                            content: "";
+                            position: relative;
+                            top: 5px;
+                            height: 10px;
+                            width: 100%;
+                            background-color: $theme-3;
+                            z-index: 0;
+                        }
+                        $time: 1500ms;
+                        &:nth-child(1)::before {width:70%;animation: skill_1 $time ease;}
+                        &:nth-child(2)::before {width:80%; animation: skill_2 $time ease;} 
+                        &:nth-child(3)::before {width:70%;animation: skill_3 $time ease;}
+                        &:nth-child(4)::before {width:55%;animation: skill_4 $time ease;}
+                        &:nth-child(5)::before {width:80%;animation: skill_5 $time ease;}
+                        &:nth-child(6)::before {width:35%;animation: skill_6 $time ease;}
+                        &:nth-child(7)::before {width:50%;animation: skill_7 $time ease;}
+                    }
+                    @keyframes skill_1 {from {width:0%;}to {width:70%;}}
+                    @keyframes skill_2 {from {width:0%;}to {width:80%;}}
+                    @keyframes skill_3 {from {width:0%;}to {width:70%;}}
+                    @keyframes skill_4 {from {width:0%;}to {width:55%;}}
+                    @keyframes skill_5 {from {width:0%;}to {width:80%;}}  
+                    @keyframes skill_6 {from {width:0%;}to {width:35%;}}
+                    @keyframes skill_7 {from {width:0%;}to {width:50%;}}
+                }
+            }
+            .hobbies {
+                padding: $unit-default;
+                padding-right: 0;
+                width: 60%;
+                @include mobile {
+                    padding: $unit-default 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    
+}
