@@ -1,6 +1,8 @@
 // Pages
 
 @import './components/Page/Home/home.scss';
+@import './components/Page/Cover/cover.scss';
+@import './components/Page/Rotator/rotator.scss';
 
 //Partials
 
@@ -8,3 +10,5 @@
 @import './utils/_responsive.scss';
 @import './utils/theme.scss';
 @import './utils/units.scss';
+
+

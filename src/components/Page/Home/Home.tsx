@@ -1,36 +1,47 @@
 import React from 'react';
 import './home.scss';
-interface Props {
 
+interface Props {
+    onEnter(event: React.MouseEvent<Element>): void;
+    visible?: boolean;
 }
 
 class Home extends React.Component<Props> {
+    constructor(Props: any) {
+        super(Props)
+        this.privateOnClick = this.privateOnClick.bind(this);
+    }
+
     render() {
         return (
-            <div className="home">
+            <div id="home" className={"home "+(this.props.visible ? 'animate' : 'blur')} >
                 <section className="panel-profile section">
-                    <img className="profile-pic" 
-                        src="https://placekitten.com/200/200" 
-                        alt="finn"
-                    />
-                    <div className="title">Finn O'Connor-Morberg</div>
-                    <div className="contact">
-                        <div>Call</div>
-                        <div>Home</div>
+                    <div className="profile-header">
+                        <button className="invisBttn" onClick={this.privateOnClick}>
+                            <img className="profile-pic"
+                                src="https://placekitten.com/200/200"
+                                alt="finn"
+                            />
+                        </button>
+                        <div className="title">Finn O'Connor-Morberg</div>
                     </div>
-                    
-                    <div className="blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</div>
-
-                    <div className="social">
-                        <ul>
-                            <li>reddit</li>
-                            <li>codepen</li>
-                            <li>test</li>
-                        </ul>
+                    <div className="profile-content">
+                        <div className="contact">
+                            <div>Call</div>
+                            <div>Home</div>
+                        </div>
+                        <div className="blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</div>
+                        <div className="social">
+                            <ul>
+                                <li>reddit</li>
+                                <li>codepen</li>
+                                <li>test</li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
+
                 <section className="panel-experience section">
                     <div className="experience-row">
                         <div className="title">Experience</div>
@@ -59,27 +70,30 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis,
                         <div className="skills">
                             <div className="title">Skills</div>
                             <div>
-                            <ul className="skills-percentage">
-                                <li className="skill">HTML / HTML5</li>
-                                <li className="skill">CSS3 / SASS</li>
-                                <li className="skill">Javascript / React</li>
-                                <li className="skill">Jquery</li>
-                                <li className="skill">Python</li>
-                                <li className="skill">Java</li>
-                                <li className="skill">SQL / PostgreSQL</li>
-                            
-                            </ul>
+                                <ul className="skills-percentage">
+                                    <li className="skill">HTML / HTML5</li>
+                                    <li className="skill">CSS3 / SASS</li>
+                                    <li className="skill">Javascript / React</li>
+                                    <li className="skill">Python</li>
+                                    <li className="skill">SQL / PostgreSQL</li>
+                                    <li className="skill">Jquery</li>
+                                    <li className="skill">Java</li>
+                                </ul>
                             </div>
                         </div>
                         <div className="hobbies">
                             <div className="title">Hobbies</div>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</div> 
+                            <div className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</div>
                         </div>
                     </div>
                 </section>
             </div>
         )
+    }
+
+    private privateOnClick(e: React.MouseEvent<Element>) {
+        this.props.onEnter(e);
     }
 }
 
