@@ -21,11 +21,12 @@ class Cover extends React.Component<Props> {
             <div className={"cover "+ (this.props.visible ? "show" : "hide")}>
                 <button className="invisBttn" onClick={this.privateOnClick}>
                     <img className="profile-pic"
-                        src="https://placekitten.com/200/200"
+                        src="https://placekitten.com/800/800"
                         alt="finn"
                     />
-                    <div className="title">text</div>
+                    <div className="title">Hi, I'm Finn</div>
                 </button>
+                <div className="background"></div>
             </div>
         )
     }

@@ -18,15 +18,35 @@
         display: flex;
     }
 
+    .title {
+        color: $theme-3;
+        font-size: 4rem;
+        text-transform: uppercase;
+    }
+
     &.hide { 
         display: none;
     }
 
+    .background {
+        background: url(http://placekitten.com/2000/2000) no-repeat;
+        background-size: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0.1;
+        z-index: 1;
+    }
+
     .profile-pic {
+        position: relative;
         padding: $unit-large;
         border-radius : 50%;
-        height: 140px;
-        width: 140px;
+        height: 400px;
+        width: 400px;
         margin: $unit-default;
+        z-index: 3;
     }
 }
