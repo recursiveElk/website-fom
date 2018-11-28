@@ -1,6 +1,8 @@
 
 .rotator {
+    overflow-x: hidden;
     .rotator-wrapper {
+        height:100vh;
         .invisBttn {
             background: none;
             color: inherit;

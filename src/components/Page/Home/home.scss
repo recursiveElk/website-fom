@@ -10,9 +10,37 @@
 
     &.blur {
         filter: blur(4px); 
+        .panel-profile {
+            @include desktop {
+                opacity: 0;
+            }
+        }
+
+        .panel-experience {
+            @include mobile {
+                opacity: 0;
+            }
+            @include desktop {
+                width: 100%;
+                transition: all 1500ms ease;
+            }
+            position: relative;
+            filter: blur(10px);
+            
+        }
     }
 
     &.animate {
+        .panel-profile {
+            transition: all 1500ms ease 800ms;
+            opacity: 1;
+        }
+        .panel-experience {
+            @include mobile {
+                transition: all 1500ms ease 800ms;
+                opacity: 1;
+            }
+        }
         .skills-percentage {
             .skill {
                 &::before {
@@ -91,7 +119,19 @@
 
         .profile-content {
             .contact {
-
+                .contact-info {
+                    max-width: 400px;
+                    display:flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    
+                    .type {
+                        
+                        margin-right: auto;
+                    }
+                    .data {
+                    }
+                }
             }
             
             .blurb {
@@ -105,14 +145,21 @@
     } 
 
     .panel-experience {
+        @include desktop {
+            transition: all 1200ms ease;
+        }
+        
         background-color:$theme-5;
         color: white;
         display: flex;
         flex-direction: column;
+        
         @include desktop {
             width: 60%;
             min-height: 100%;
             overflow-y: auto;
+            position: relative;
+            right: 0;
         }
         .title {
             color: $theme-2;
@@ -186,6 +233,4 @@
             }
         }
     }
-
-    
 }

@@ -17,9 +17,9 @@ class Home extends React.Component<Props> {
             <div id="home" className={"home "+(this.props.visible ? 'animate' : 'blur')} >
                 <section className="panel-profile section">
                     <div className="profile-header">
-                        <button className="invisBttn" onClick={this.privateOnClick}>
+                        <button className="invisBttn" >
                             <img className="profile-pic"
-                                src="https://placekitten.com/200/200"
+                                src="https://placekitten.com/400/400"
                                 alt="finn"
                             />
                         </button>
@@ -27,8 +27,18 @@ class Home extends React.Component<Props> {
                     </div>
                     <div className="profile-content">
                         <div className="contact">
-                            <div>Call</div>
-                            <div>Home</div>
+                            <div className="contact-info">
+                                <div className="type">Call</div>
+                                <div className="data">02102301298</div>
+                            </div>
+                            <div className="contact-info">
+                                <div className="type">Email</div>
+                                <div className="data">02102301298</div>
+                            </div>
+                            <div className="contact-info">
+                                <div className="type">Home</div>
+                                <div className="data">Auckland, New Zealand</div>
+                            </div>
                         </div>
                         <div className="blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</div>

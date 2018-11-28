@@ -5,7 +5,7 @@
 .cover {
     height: 100%;
     width: 100%;
-    background-color: rgba(28, 28, 32, 0.9);
+    background-color: rgba(28, 28, 32, 0.95);
     z-index: 50;
     position: fixed;
     top: 0;
@@ -13,30 +13,36 @@
     display:flex;
     flex-direction: column;
     justify-content: center;
+    opacity: 0;
     
-    &.show {
-        display: flex;
-    }
-
     .title {
         color: $theme-3;
         font-size: 4rem;
         text-transform: uppercase;
     }
+   
+    &.show {
+        display: flex;
+        opacity: 1;
+        transition: all 750ms  ease;
+    }
 
     &.hide { 
-        display: none;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 650ms  ease;
+        animation: fade_out 650ms  ease;
     }
 
     .background {
-        background: url(http://placekitten.com/2000/2000) no-repeat;
-        background-size: 100%;
+        // background: url(../../../static/images/0.jpg) no-repeat;
+        background-size: cover;
         position: absolute;
         top: 0;
         left: 0;
         bottom: 0;
         right: 0;
-        opacity: 0.1;
+        opacity: 0.13;
         z-index: 1;
     }
 
@@ -49,4 +55,9 @@
         margin: $unit-default;
         z-index: 3;
     }
+}
+
+@keyframes fade_out {
+   from {opacity: 1;}
+   to {opacity: 0;}
 }
