@@ -19,7 +19,7 @@ class Home extends React.Component<Props> {
                     <div className="profile-header">
                         <button className="invisBttn" >
                             <img className="profile-pic"
-                                src="https://placekitten.com/400/400"
+                                src="./images/grad.jpg"
                                 alt="finn"
                             />
                         </button>
@@ -33,7 +33,7 @@ class Home extends React.Component<Props> {
                             </div>
                             <div className="contact-info">
                                 <div className="type">Email</div>
-                                <div className="data">02102301298</div>
+                                <div className="data">finneom@gmail.com</div>
                             </div>
                             <div className="contact-info">
                                 <div className="type">Home</div>
@@ -43,11 +43,21 @@ class Home extends React.Component<Props> {
                         <div className="blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</div>
                         <div className="social">
-                            <ul>
-                                <li>reddit</li>
-                                <li>codepen</li>
-                                <li>test</li>
-                            </ul>
+                            <a className="link" href="http://github.com/recursiveElk">
+                                <img className="icon" src="./images/githubwhite.png" alt="Social Icon" />
+                            </a>
+                            <a className="link" href="https://codepen.io/recursiveElk/">
+                                <img className="icon" src="./images/codepenwhite.png" alt="Social Icon" />
+                            </a>
+                            <a className="link" href="https://www.linkedin.com/in/finneom/">
+                                <img className="icon" src="./images/linkedinwhite.png" alt="Social Icon" />
+                            </a>
+                            <a className="link" href="https://www.reddit.com/user/recursiveElk/">
+                                <img className="icon" src="./images/redditwhite.png" alt="Social Icon" />
+                            </a>
+                            <a className="link" href="https://www.instagram.com/finn_eom/">
+                                <img className="icon" src="./images/instagramwhite.png" alt="Social Icon" />
+                            </a>
                         </div>
                     </div>
                 </section>
