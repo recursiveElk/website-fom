@@ -40,23 +40,31 @@ class Home extends React.Component<Props> {
                                 <div className="data">Auckland, New Zealand</div>
                             </div>
                         </div>
-                        <div className="blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</div>
+                        <div className="blurb">
+                            I'm a Developer based in New Zealand with experience in fullstack web development, 
+                            Agile methodologies and project management.
+                            <br/><br/>
+                            Currently i'm working for BePure, covering a wide range of projects and scope. In my spare
+                            time i enjoy rock climbing and occasionally playing on CodePen.
+                            <br/><br/>
+                            I have a passion for learning the best practice of the industry and to aquire a wide
+                            understanding of web development frameworks and tools.
+                        </div>
                         <div className="social">
                             <a className="link" href="http://github.com/recursiveElk">
-                                <img className="icon" src="./images/githubwhite.png" alt="Social Icon" />
+                                <img className="icon" src="./images/github_black.svg" alt="Social Icon" />
                             </a>
                             <a className="link" href="https://codepen.io/recursiveElk/">
-                                <img className="icon" src="./images/codepenwhite.png" alt="Social Icon" />
+                                <img className="icon" src="./images/www_black.svg" alt="Social Icon" />
                             </a>
                             <a className="link" href="https://www.linkedin.com/in/finneom/">
-                                <img className="icon" src="./images/linkedinwhite.png" alt="Social Icon" />
+                                <img className="icon" src="./images/linked_in_black.svg" alt="Social Icon" />
                             </a>
                             <a className="link" href="https://www.reddit.com/user/recursiveElk/">
-                                <img className="icon" src="./images/redditwhite.png" alt="Social Icon" />
+                                <img className="icon" src="./images/reddit_black.svg" alt="Social Icon" />
                             </a>
                             <a className="link" href="https://www.instagram.com/finn_eom/">
-                                <img className="icon" src="./images/instagramwhite.png" alt="Social Icon" />
+                                <img className="icon" src="./images/instagram_black.svg" alt="Social Icon" />
                             </a>
                         </div>
                     </div>
@@ -71,18 +79,31 @@ class Home extends React.Component<Props> {
                                 <div className="role">Fullstack Web Developer</div>
                             </div>
                             <div className="description-wrapper">
-                                <div className="timeline">1 Year</div>
-                                <div className="description">A good role</div>
+                                <div className="timeline">Dec 2017 - Present</div>
+                                <div className="description">
+                                    Currently working on the BePure Platform where I have been developing a great variety of systems
+                                    used to deliver hollistic health services to New Zealanders.
+                                    <br/><br/>
+                                    Some tasks include: PWA web app development with React, Redux and TypeScript,
+                                    Work on both external and internal API's in Python, AWS Dev Ops, an in-house Calendar and CMS with Flask, general 
+                                    Database architecture and PDF/QR Generation.  
+                                </div>
                             </div>
                         </div>
                         <div className="oppurtunity">
                             <div className="company-wrapper">
-                                <div className="company">BePure</div>
-                                <div className="role">Fullstack Web Developer</div>
+                                <div className="company">NumberWorks'nWords</div>
+                                <div className="role">Graduate Developer</div>
                             </div>
                             <div className="description-wrapper">
-                                <div className="timeline">1 Year</div>
-                                <div className="description">A good role</div>
+                                <div className="timeline">Nov 2016 - Nov 2017</div>
+                                <div className="description">
+                                    At my time at NumberWorks i worked on developing educational software and onboarding applications
+                                    used in Australia, NZ, and the UK.
+                                    <br/><br/>
+                                    This role was very beneficial in growing my general understanding of software development, involving 
+                                    primarily aspects of Frontend Development and UX/UI design.
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -103,8 +124,17 @@ class Home extends React.Component<Props> {
                         </div>
                         <div className="hobbies">
                             <div className="title">Hobbies</div>
-                            <div className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</div>
+                            <div className="description">
+                                <div className="hobbie-image-container" data-before="Coffee with Friends">
+                                    <img className="hobbie-image" src="./images/about_orig.jpg" alt=""/>    
+                                </div>
+                                <div className="hobbie-image-container" data-before="Rock Climbing">
+                                    <img className="hobbie-image image-two" src="./images/rock_climbing.jpg" alt=""/>
+                                </div>
+                                <div className="hobbie-image-container" data-before="Gaming">
+                                    <img className="hobbie-image" src="./images/gaming.jpg" alt=""/>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
