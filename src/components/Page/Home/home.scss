@@ -191,7 +191,8 @@
             text-transform: uppercase;
         }
         .experience-row {
-            padding:0;
+            padding: $unit-default 0;
+            padding-bottom: 0;
             .oppurtunity {
                 padding: $unit-default 0;
                 padding-top: 0;
@@ -252,6 +253,7 @@
             }
             .hobbies {
                 padding: $unit-default;
+                padding-top: 0;
                 padding-right: 0;
                 width: 60%;
                 @include mobile {
