@@ -35,7 +35,7 @@ const Home = () => {
                     <div className="profile-header">
                         <button className="invisBttn" >
                             <img className="profile-pic"
-                                src="./images/grad.jpg"
+                                src="./images/grad_small.jpg"
                                 alt="finn"
                             />
                         </button>
@@ -63,7 +63,7 @@ const Home = () => {
                             Currently i'm working for BePure, covering a wide range of projects and scope. In my spare
                             time i enjoy rock climbing and occasionally playing on CodePen.
                             <br /><br />
-                            I have a passion for learning the best practice of the industry and to aquire a wide
+                            I have a passion for learning the best practice of the industry and to acquire a wide
                             understanding of web development frameworks and tools.
                         </div>
                         <div className="social">
