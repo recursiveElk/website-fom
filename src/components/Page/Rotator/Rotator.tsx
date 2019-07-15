@@ -1,7 +1,6 @@
 import React from 'react';
 import './rotator.scss';
 import Home from '../Home/Home';
-import Cover from '../Cover/Cover';
 
 interface Props {
     
@@ -17,16 +16,15 @@ class Rotator extends React.Component<Props, State> {
         super(Props);
         this.onEnterClick = this.onEnterClick.bind(this);
         this.state = {
-            coverShowing: true,
-            homeShowing: false,
+            coverShowing: false,
+            homeShowing: true,
         }
     }
     render() {
         return (
             <div className="rotator">
                 <div className="rotator-wrapper">
-                    <Cover visible={this.state.coverShowing} onEnter={this.onEnterClick}/>
-                    <Home visible={this.state.homeShowing} onEnter={this.onEnterClick}/>
+                    <Home />
                 </div>
             </div>
         )

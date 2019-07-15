@@ -1,21 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './home.scss';
 
-interface Props {
-    onEnter(event: React.MouseEvent<Element>): void;
-    visible?: boolean;
-}
+const Home = () => {
+    const [togglePageBlur, setTogglePageBlur] = useState('blur');
+    const [toggleVisible1, setToggleVisible1] = useState(false);
+    const [toggleVisible2, setToggleVisible2] = useState(false);
+    const [toggleVisible3, setToggleVisible3] = useState(false);
 
-class Home extends React.Component<Props> {
-    constructor(Props: any) {
-        super(Props)
-        this.privateOnClick = this.privateOnClick.bind(this);
-    }
+    useEffect(() => {
+        const pageTimer = setTimeout(() => {
+            setTogglePageBlur('animate');
+        }, 0);
+        const fadeTimer1 = setTimeout(() => {
+            setToggleVisible1(true);
+        }, 1800);
+        const fadeTimer2 = setTimeout(() => {
+            setToggleVisible2(true);
+        }, 2200);
+        const fadeTimer3 = setTimeout(() => {
+            setToggleVisible3(true);
+        }, 2600);
+        return () => {
+            clearTimeout(pageTimer);
+            clearTimeout(fadeTimer1);
+            clearTimeout(fadeTimer2);
+            clearTimeout(fadeTimer3);
+        }
+    }, []);
 
-    render() {
-        return (
-            <div id="home" className={"home "+(this.props.visible ? 'animate' : 'blur')} >
-                <section className="panel-profile section">
+    return (
+        <div id="home" className={`home ${togglePageBlur}`} >
+            <section className="panel-profile section">
+                <div className={`wrapper ${toggleVisible1 ? 'visible' : ''}`}>
                     <div className="profile-header">
                         <button className="invisBttn" >
                             <img className="profile-pic"
@@ -41,12 +57,12 @@ class Home extends React.Component<Props> {
                             </div>
                         </div>
                         <div className="blurb">
-                            I'm a Developer based in New Zealand with experience in fullstack web development, 
+                            I'm a Developer based in New Zealand with experience in fullstack web development,
                             Agile methodologies and project management.
-                            <br/><br/>
+                            <br /><br />
                             Currently i'm working for BePure, covering a wide range of projects and scope. In my spare
                             time i enjoy rock climbing and occasionally playing on CodePen.
-                            <br/><br/>
+                            <br /><br />
                             I have a passion for learning the best practice of the industry and to aquire a wide
                             understanding of web development frameworks and tools.
                         </div>
@@ -68,9 +84,11 @@ class Home extends React.Component<Props> {
                             </a>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section className="panel-experience section">
+            <section className="panel-experience section">
+                <div className={`wrapper ${toggleVisible2 ? 'visible' : ''}`}>
                     <div className="experience-row">
                         <div className="title">Experience</div>
                         <div className="oppurtunity">
@@ -83,10 +101,10 @@ class Home extends React.Component<Props> {
                                 <div className="description">
                                     Currently working on the BePure Platform where I have been developing a great variety of systems
                                     used to deliver hollistic health services to New Zealanders.
-                                    <br/><br/>
+                                    <br /><br />
                                     Some tasks include: PWA web app development with React, Redux and TypeScript,
-                                    Work on both external and internal API's in Python, AWS Dev Ops, an in-house Calendar and CMS with Flask, general 
-                                    Database architecture and PDF/QR Generation.  
+                                    Work on both external and internal API's in Python, AWS Dev Ops, an in-house Calendar and CMS with Flask, general
+                                    Database architecture and PDF/QR Generation.
                                 </div>
                             </div>
                         </div>
@@ -100,13 +118,15 @@ class Home extends React.Component<Props> {
                                 <div className="description">
                                     At my time at NumberWorks i worked on developing educational software and onboarding applications
                                     used in Australia, NZ, and the UK.
-                                    <br/><br/>
-                                    This role was very beneficial in growing my general understanding of software development, involving 
+                                    <br /><br />
+                                    This role was very beneficial in growing my general understanding of software development, involving
                                     primarily aspects of Frontend Development and UX/UI design.
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className={`wrapper ${toggleVisible3 ? 'visible' : ''}`}>
                     <div className="skill-row">
                         <div className="skills">
                             <div className="title">Skills</div>
@@ -126,25 +146,21 @@ class Home extends React.Component<Props> {
                             <div className="title">Hobbies</div>
                             <div className="description">
                                 <div className="hobbie-image-container" data-before="Coffee with Friends">
-                                    <img className="hobbie-image" src="./images/about_orig.jpg" alt=""/>    
+                                    <img className="hobbie-image" src="./images/about_orig.jpg" alt="" />
                                 </div>
                                 <div className="hobbie-image-container" data-before="Rock Climbing">
-                                    <img className="hobbie-image image-two" src="./images/rock_climbing.jpg" alt=""/>
+                                    <img className="hobbie-image image-two" src="./images/rock_climbing.jpg" alt="" />
                                 </div>
                                 <div className="hobbie-image-container" data-before="Gaming">
-                                    <img className="hobbie-image" src="./images/gaming.jpg" alt=""/>
+                                    <img className="hobbie-image" src="./images/gaming.jpg" alt="" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
+        </div > 
         )
     }
-
-    private privateOnClick(e: React.MouseEvent<Element>) {
-        this.props.onEnter(e);
-    }
-}
 
 export default Home

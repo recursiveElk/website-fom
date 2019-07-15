@@ -3,16 +3,33 @@
 @import '../../../utils/theme';
 
 
+.wrapper {
+    opacity: 0;
+    
+    &.visible {
+        animation: fadein 2s;
+        opacity: 1;
+    }
+    @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+}
+
 .home {
+    background: $theme-5;
+    height: 100%;
     display: flex;
     flex-direction: column;
     width: auto;
 
     &.blur {
-        filter: blur(4px); 
+        // filter: blur(2px); 
         .panel-profile {
             @include desktop {
-                opacity: 0;
+                width: 0%;
+                padding: 0;
+                overflow: auto;
             }
         }
 
@@ -21,11 +38,9 @@
                 opacity: 0;
             }
             @include desktop {
-                width: 100%;
                 transition: all 1500ms ease;
             }
-            position: relative;
-            filter: blur(10px);
+            // filter: blur(4px);
             
         }
     }
@@ -34,6 +49,10 @@
         .panel-profile {
             transition: all 1500ms ease 800ms;
             opacity: 1;
+            padding: 32px;
+            @include desktop {
+                width: 1000px;
+            }
         }
         .panel-experience {
             @include mobile {
@@ -64,13 +83,14 @@
                     z-index: 0;
                 }
                 $time: 1500ms;
-                &:nth-child(1)::before {width:70%;animation: skill_1 $time ease;}
-                &:nth-child(2)::before {width:80%;animation: skill_2 $time ease;} 
-                &:nth-child(3)::before {width:70%;animation: skill_3 $time ease;}
-                &:nth-child(4)::before {width:80%;animation: skill_4 $time ease;}
-                &:nth-child(5)::before {width:55%;animation: skill_5 $time ease;}
-                &:nth-child(6)::before {width:60%;animation: skill_6 $time ease;}
-                &:nth-child(7)::before {width:35%;animation: skill_7 $time ease;}
+                $delay: 2500ms;
+                &:nth-child(1)::before {width:70%;animation: skill_1 $time ease $delay;}
+                &:nth-child(2)::before {width:80%;animation: skill_2 $time ease $delay;} 
+                &:nth-child(3)::before {width:70%;animation: skill_3 $time ease $delay;}
+                &:nth-child(4)::before {width:80%;animation: skill_4 $time ease $delay;}
+                &:nth-child(5)::before {width:55%;animation: skill_5 $time ease $delay;}
+                &:nth-child(6)::before {width:60%;animation: skill_6 $time ease $delay;}
+                &:nth-child(7)::before {width:35%;animation: skill_7 $time ease $delay;}
             }
             @keyframes skill_1 {from {width:0%;}to {width:70%;}}
             @keyframes skill_2 {from {width:0%;}to {width:80%;}}
@@ -80,14 +100,19 @@
             @keyframes skill_6 {from {width:0%;}to {width:60%;}}
             @keyframes skill_7 {from {width:0%;}to {width:35%;}}
         }
+        @include desktop {
+            height: calc(100vh - #{$unit-large} * 2);
+            transition: all 1000ms ease;
+            overflow: inherit;
+        }
     }
     
-    @include desktop {
-        flex-direction: row;
-        height: calc(100vh - #{$unit-large} * 2);
-    }
     .section {
         padding: $unit-large;
+    }
+
+    @include desktop {
+        flex-direction: row;
     }
     
     .panel-profile {
@@ -95,7 +120,7 @@
         color:black;
         height: 100%;
         @include desktop {
-            width: 40%;
+            width: 100%;
         }
 
         .profile-header {
@@ -180,11 +205,8 @@
         flex-direction: column;
         
         @include desktop {
-            width: 60%;
             min-height: 100%;
             overflow-y: auto;
-            position: relative;
-            right: 0;
         }
         .title {
             color: $theme-2;
@@ -301,5 +323,15 @@
                 }
             }
         }
+    }
+
+    .invisBttn {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
     }
 }
