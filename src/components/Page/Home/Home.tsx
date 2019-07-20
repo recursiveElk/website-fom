@@ -71,10 +71,13 @@ const Home = () => {
                                 <img className="icon" src="./images/github_black.svg" alt="Social Icon" />
                             </a>
                             <a className="link" href="https://codepen.io/recursiveElk/">
-                                <img className="icon" src="./images/www_black.svg" alt="Social Icon" />
+                                <img className="icon" src="./images/codepen_black.svg" alt="Social Icon" />
                             </a>
                             <a className="link" href="https://www.linkedin.com/in/finneom/">
                                 <img className="icon" src="./images/linked_in_black.svg" alt="Social Icon" />
+                            </a>
+                            <a className="link" href="https://discordapp.com/users/169385080307974144">
+                                <img className="icon" src="./images/discord_black.svg" alt="Social Icon" />
                             </a>
                             <a className="link" href="https://www.reddit.com/user/recursiveElk/">
                                 <img className="icon" src="./images/reddit_black.svg" alt="Social Icon" />
