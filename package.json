@@ -6,7 +6,6 @@
     "@types/node": "^10.14.12",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
-    "fsevents": "^2.0.7",
     "node-sass": "^4.12.0",
     "react": "^16.7",
     "react-dom": "^16.7",
@@ -27,5 +26,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "optionalDependencies": {
+    "fsevents": "^2.1.2"
+  }
 }
